@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<job-scheduling-data
+    xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData http://www.quartz-scheduler.org/xml/job_scheduling_data_1_8.xsd"
+    version="1.8">
+
+    <schedule>
+        <job>
+            <name>default_job</name>
+            <group>default_job_group</group>
+
+            <description>1st job description</description>
+            <job-class>net.halflite.guicequartzsample.job.DefaultJob</job-class>
+        </job>
+
+        <trigger>
+            <cron>
+                <name>minute_trriger</name>
+                <group>minute_trriger_group</group>
+
+                <job-name>default_job</job-name>
+                <job-group>default_job_group</job-group>
+
+                <cron-expression>0 * * * * ?</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>
+</job-scheduling-data>
